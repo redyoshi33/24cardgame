@@ -1,0 +1,67 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div id='container'>
+  <div id='left-side'>
+    <h1>
+      Timer: {{count}}
+    </h1>
+    <button class="btn btn-warning" (click)="clickSkip()">Skip</button>
+    <div id='cards'>
+      <img src='assets/cards/{{card1.id}}.svg' height='174.38' width="125" (click)="clickValue(card1)">
+      <img src='assets/cards/{{card2.id}}.svg' height='174.38' width="125" (click)="clickValue(card2)">
+      <img src='assets/cards/{{card3.id}}.svg' height='174.38' width="125" (click)="clickValue(card3)">
+      <img src='assets/cards/{{card4.id}}.svg' height='174.38' width="125" (click)="clickValue(card4)">
+    </div>
+    <div id='buttons'>
+      <button class="btn btn-primary" (click)="clickSymbol('+')">+</button>
+      <button class="btn btn-primary" (click)="clickSymbol('-')">-</button>
+      <button class="btn btn-primary" (click)="clickSymbol('*')">x</button>
+      <button class="btn btn-primary" (click)="clickSymbol('/')">/</button><br>
+      <button class="btn btn-primary" (click)="openParen()">(</button>
+      <button class="btn btn-primary" (click)="closeParen()">)</button>
+      <h3>Answer:</h3>
+      <div id='answer'>
+        <h2>{{answer}}</h2>    
+      </div>
+      <button class="btn btn-success" (click)="clickCompile()">Compile</button>
+      <button class="btn btn-danger" (click)="clearAnswer()">Clear</button>
+      <h2 id='compiledanswer'>{{compiledanswer}}</h2>
+    </div>
+  </div>
+  <div id='right-side'>
+    <h1>24</h1>
+    <h3 id='rulesh'>Rules:</h3>
+    <p id='rulebod'>Use ALL 4 cards displayed on the screen to get to 24! Players can use addition, subtraction, multiplication, and division and the first player to find 24 will be awarded points. The first player to 10 points wins! If all players decide to skip the current problem OR the timer runs out, four new cards will be generated. </p>
+    <div id='user'>
+    <div id='login' *ngIf='!loggedin'>
+        <h5>Username:</h5>
+        <form id='ok' (submit)="unameSubmit()">
+            <input type="text" name="name" id="username" [(ngModel)]="username"><br>
+            <input type="submit" value="OK" id='submitbtn'>
+        </form>
+    </div>
+    <div id='uname' *ngIf='loggedin'>
+      <h3>{{username}}</h3>
+      <h4 id='score'>Score: {{score}}</h4>
+    </div>
+    </div>
+    <div id='userboard'>
+      <table class="table table-striped">
+      <tr>
+        <th class="col-md-2">Username</th>
+        <th class="col-md-2">Score</th>
+        <th class="col-md-5">Answer</th>
+      </tr>
+      <tr *ngFor="let player of players">
+        <td class="col-md-2"><h3>{{player.data.username}}</h3></td>
+        <td class="col-md-2"><h3>{{player.data.score}}</h3></td>
+        <td class="col-md-5"><h3>{{player.data.answer}}</h3></td>
+      </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

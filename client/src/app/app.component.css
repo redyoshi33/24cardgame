@@ -1,0 +1,92 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#container{
+	background:linear-gradient(rgb(23, 135, 6), rgb(28, 208, 1),rgb(23, 135, 6));
+	padding: 20px;
+	width: 1170px;
+}	
+#left-side{
+	background:	rgb(240,230,140);
+	vertical-align: top;
+	text-align: center;
+	width: 550px;
+	height: 600px;
+	border: 10px solid rgb(87, 54, 54);
+	display: inline-block;
+	margin-right: 20px;
+	box-shadow: 5px 5px;
+}
+#right-side{
+	background:	rgb(240,230,140);
+	padding: 15px;
+	vertical-align: top;
+	text-align: center;
+	width: 550px;
+	height: 600px;
+	border: 10px solid rgb(87, 54, 54);
+	display: inline-block;
+	box-shadow: 5px 5px;
+}
+#right-side h1{
+	font-size: 45px;
+}
+#rulesh{
+	text-align: left;
+}
+#rulebod{
+	margin-top: 10px;
+	text-align: left;
+}
+#login{
+	margin-top: 10px;
+}
+#ok{
+	margin: 5px;
+}
+#uname{
+	margin: 10px;
+}
+#score{
+	margin: 10px;
+}
+#cards{
+	margin: 20px 0px;
+}
+#submitbtn{
+	margin-top: 5px;
+	padding: 1px 5px;
+}
+#user{
+	height: 80px;
+}
+#userboard{
+	width: 500px;
+	height: 300px;
+	border: 1px solid black;
+	background: rgb(255,255,255);
+}
+.table th{
+	text-align: center;
+}
+img{
+	background: rgb(255,255,255)
+}
+.btn{
+	margin: 5px 10px 5px;
+	width: 80px;
+	height: 40px;
+	font-weight: bold;
+}
+#answer{
+	padding: 4px;
+	border: 1px solid black;
+	height: 45px;
+	width: 390px;
+	margin: auto;
+	background: rgb(255,255,255)
+}
+#compiledanswer{
+	margin-top: 10px;
+}
