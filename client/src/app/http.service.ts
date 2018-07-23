@@ -14,13 +14,24 @@ export class HttpService {
   initSocket() {
     this.socket = io(SERVER_URL);
   }
+  loginCheck(data){
+    this.socket.emit('checkUsername', data)
+  }
+  loginStart(){
+    return new Observable<object>(observer => {
+      this.socket.on('loginPassFail', (data) => {observer.next(data)});
+    });
+  }
   sendData(data){
-  	this.socket.emit('startgame', data)
+  	this.socket.emit('updategame', data)
   }
   recieveData(){
   	return new Observable<object>(observer => {
       this.socket.on('update', (data) => {observer.next(data)});
     });
+  }
+  skip(){
+    this.socket.emit('skipCount')
   }
   newRound(){
   	return new Observable<object>(observer => {
@@ -35,9 +46,15 @@ export class HttpService {
       this.socket.on('timer', (data) => {observer.next(data)});
     });
   }
-  onEvent(event) {
+  winner(data){
+    this.socket.emit('winGame', data)
+  }
+  stopGame(){
     return new Observable<object>(observer => {
-      this.socket.on(event, () => observer.next());
+      this.socket.on('endGame', (data) => {observer.next(data)});
     });
+  }
+  startNewGame(data){
+    this.socket.emit('newGame', data)
   }
 } 

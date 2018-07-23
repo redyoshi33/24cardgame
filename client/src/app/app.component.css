@@ -66,6 +66,14 @@
 	height: 300px;
 	border: 1px solid black;
 	background: rgb(255,255,255);
+	overflow-y: auto;
+}
+#winnerBanner{
+	color: #006fe8;
+}
+.btn-primary{
+	background-color: #006fe8;
+	color: white;
 }
 .table th{
 	text-align: center;
@@ -75,9 +83,11 @@ img{
 }
 .btn{
 	margin: 5px 10px 5px;
-	width: 80px;
+	width: 100px;
 	height: 40px;
+	box-shadow: 2px 2px 2px #888888;
 	font-weight: bold;
+	font-family: arial;
 }
 #answer{
 	padding: 4px;

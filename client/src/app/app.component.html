@@ -7,7 +7,8 @@
     <h1>
       Timer: {{count}}
     </h1>
-    <button class="btn btn-warning" (click)="clickSkip()">Skip</button>
+    <button class="btn btn-warning" (click)="clickSkip()" *ngIf="!endgame">Skip</button>
+    <button class='btn btn-primary' (click)="pressNewGame()" *ngIf="endgame">Play Again</button>
     <div id='cards'>
       <img src='assets/cards/{{card1.id}}.svg' height='174.38' width="125" (click)="clickValue(card1)">
       <img src='assets/cards/{{card2.id}}.svg' height='174.38' width="125" (click)="clickValue(card2)">
@@ -31,7 +32,8 @@
     </div>
   </div>
   <div id='right-side'>
-    <h1>24</h1>
+    <h1 *ngIf='!endgame'>24</h1>
+    <h1 *ngIf='endgame'  id='winnerBanner'>{{winner}}</h1>
     <h3 id='rulesh'>Rules:</h3>
     <p id='rulebod'>Use ALL 4 cards displayed on the screen to get to 24! Players can use addition, subtraction, multiplication, and division and the first player to find 24 will be awarded points. The first player to 10 points wins! If all players decide to skip the current problem OR the timer runs out, four new cards will be generated. </p>
     <div id='user'>
@@ -53,6 +55,16 @@
         <th class="col-md-2">Username</th>
         <th class="col-md-2">Score</th>
         <th class="col-md-5">Answer</th>
+      </tr>
+      <tr *ngIf='loginfailed'>
+        <td><h3>{{failmessage}}</h3></td>
+        <td><h3>is</h3></td>
+        <td><h3>already taken!</h3></td>
+      </tr>
+      <tr *ngIf='unametoolong'>
+        <td><h3>Username</h3></td>
+        <td><h3>is</h3></td>
+        <td><h3>too long! ( < 9 char )</h3></td>
       </tr>
       <tr *ngFor="let player of players">
         <td class="col-md-2"><h3>{{player.data.username}}</h3></td>
