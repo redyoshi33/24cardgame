@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 
 import * as io from 'socket.io-client';
-const SERVER_URL = '54.219.166.95';
+const SERVER_URL = '54.183.223.25';
 
 @Injectable()
 export class HttpService {
