@@ -1,5 +1,6 @@
 # 24cardgame
 
+<p><u>Demo</u>: <a class='link' href='https://www.youtube.com/embed/WC1hlFO55Y8' target="_blank">youtube.com/embed/WC1hlFO55Y8</a></p>
 <p>Try it out: <a class='link' href="http://54.183.223.25/" target="_blank">http://54.183.223.25/</a></p>
 		
 <p><u>Technologies</u>:  Express.js, Node.js, Angular, Socket.io, Bootstrap </p>
