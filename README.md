@@ -1,8 +1,6 @@
 # 24cardgame
 
-<p><u>LinkedIn</u>: <a class='link' href='https://www.linkedin.com/in/youngryan93/' target="_blank">linkedin.com/in/youngryan93/</a></p>
-<p><u>Portfolio</u>: <a class='link' href='http://ryoung.netlify.com/#projects' target="_blank">ryoung.netlify.com/</a></p>
-		<p>Try it out: <a class='link' href="http://54.183.223.25/" target="_blank">http://54.183.223.25/</a></p>
+<p>Try it out: <a class='link' href="http://54.183.223.25/" target="_blank">http://54.183.223.25/</a></p>
 		
 <p><u>Technologies</u>:  Express.js, Node.js, Angular, Socket.io, Bootstrap </p>
 <p><u>Role</u>: Worked independently, built the UI, game logic, and server to user connections.</p>
